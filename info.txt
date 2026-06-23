@@ -1,0 +1,3 @@
+brew install pipenv
+pipenv shell 
+pipenv install langchain_groq google-genai langchain_community

@@ -1,0 +1,11 @@
+langchain_groq
+python-dotenv
+langchain_community
+langchain_groq
+google-genai
+langchain_google_genai
+langgraph
+tavily
+pydantic
+pydantic-ai
+fastapi
