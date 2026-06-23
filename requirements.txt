@@ -9,3 +9,4 @@ tavily
 pydantic
 pydantic-ai
 fastapi
+streamlit
