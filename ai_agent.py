@@ -22,10 +22,18 @@ from langgraph.prebuilt import create_react_agent
 
 system_prompt="Act as an AI chatbot who is smart and friendly"
 
-agent = create_react_agent(
-    model=groq_llm,
-    tools=[search_tool]
-)
+def get_response_from_ai_agent(llm_id, query, allow_search, system_prompt, provider):
+    if provider=="Groq":
+        llm=ChatGroq(model=llm_id)
+    elif provider=="Gemini":
+        llm=ChatGoogleGenerativeAI(model=llm_id)
+    
+    tools=[TavilySearch(max_results=2)] if allow_search else []
+    
+    agent = create_react_agent(
+        model=llm,
+        tools=[search_tool]
+    )
 
 query="Tell me about the trends in crypto markets"
 state={"messages": query}
